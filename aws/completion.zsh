@@ -1,1 +1,1 @@
-/usr/local/share/zsh/site-functions/aws_zsh_completer.sh
+source `brew --prefix`/share/zsh/site-functions/aws_zsh_completer.sh
