@@ -1,8 +1,14 @@
-[user]
-        name = AUTHORNAME
-        email = AUTHOREMAIL
-[credential]
-        helper = GIT_CREDENTIAL_HELPER
+# Local/private config goes in the include
+[include]
+        path = ~/.gitconfig.local
+[hub]
+        protocol = https
+[alias]
+        co = checkout
+        promote = !$ZSH/bin/git-promote
+        wtf     = !$ZSH/bin/git-wtf
+        rank-contributors = !$ZSH/bin/git-rank-contributors
+        count   = !git shortlog -sn
 [color]
         diff = auto
         status = auto
@@ -10,6 +16,8 @@
         wtf = true
         ui = true
 [alias]
+        co = checkout
+        count   = !git shortlog -sn
         pl = pull
         pu = push
         m = merge
@@ -28,7 +36,6 @@
         pr = pull-request
         x = !sh -c 'gitx $1' -
         count-all = !git rev-list --all | wc -l
-        count = !sh -c 'git rev-list $1 | wc -l' -
         short = rev-parse --short=4
         ls-ignore = ls-files --others --ignored --exclude-standard
         branch-has = branch -a --contains
@@ -38,7 +45,6 @@
         wtf = !~/Dropbox/Dev/git-tools/bin/git-wtf
         io = !sh -c 'curl -i http://git.io -F "url=$1"' -
         show-merges = !~/Dropbox/Dev/git-tools/bin/git-show-merges
-        rank-contribs = !~/Dropbox/Dev/git-tools/bin/git-rank-contributors
         diff-clip = !git diff -p | pbcopy
         apply-clip = !pbpaste | git apply
         prune-gh = remote prune gh
@@ -62,42 +68,10 @@
         autocrlf = false
 [push]
         default = simple
-
-# Zach's gitconfig
-#
-# 
-# [hub]
-#         protocol = https
-# [user]
-#         name = AUTHORNAME
-#         email = AUTHOREMAIL
-# [credential]
-#         helper = osxkeychain
-# [alias]
-#         co = checkout
-#         promote = !$ZSH/bin/git-promote
-#         wtf     = !$ZSH/bin/git-wtf
-#         rank-contributers = !$ZSH/bin/git-rank-contributors
-#         count   = !git shortlog -sn
-# [color]
-#         diff = auto
-#         status = auto
-#         branch = auto
-#         ui = true
-# [core]
-#         excludesfile = ~/.gitignore
-#         editor = vim
-# [apply]
-#         whitespace = nowarn
-# [mergetool]
-#         keepBackup = false
-# [difftool]
-#         prompt = false
-# [help]
-#         autocorrect = 1
-# [push]
-#         # See `git help config` (search for push.default)
-#         # for more information on different options of the below setting.
-#         #
-#         # Setting to git 2.0 default to suppress warning message
-#         default = simple
+[credential]
+	helper = osxkeychain
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
