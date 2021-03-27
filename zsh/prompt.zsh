@@ -43,7 +43,7 @@ need_push () {
 
     if [[ $number == 0 ]]
     then
-      echo " "
+      echo ""
     else
       echo " with %{$fg_bold[magenta]%}$number unpushed%{$reset_color%}"
     fi
