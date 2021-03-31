@@ -3,12 +3,6 @@
         path = ~/.gitconfig.local
 [hub]
         protocol = https
-[alias]
-        co = checkout
-        promote = !$ZSH/bin/git-promote
-        wtf     = !$ZSH/bin/git-wtf
-        rank-contributors = !$ZSH/bin/git-rank-contributors
-        count   = !git shortlog -sn
 [color]
         diff = auto
         status = auto
@@ -41,13 +35,12 @@
         branch-has = branch -a --contains
         tag-has = tag -l --contains
         head = !git show-ref --abbrev $(git symbolic-ref HEAD) | awk '{print $1}'
-        pugh = push gh
-        wtf = !~/Dropbox/Dev/git-tools/bin/git-wtf
         io = !sh -c 'curl -i http://git.io -F "url=$1"' -
-        show-merges = !~/Dropbox/Dev/git-tools/bin/git-show-merges
         diff-clip = !git diff -p | pbcopy
         apply-clip = !pbpaste | git apply
-        prune-gh = remote prune gh
+        promote = !$ZSH/bin/git-promote
+        wtf     = !$ZSH/bin/git-wtf
+        rank-contributors = !$ZSH/bin/git-rank-contributors
 
         logp = log --pretty=oneline
 
@@ -66,6 +59,7 @@
 
 [core]
         autocrlf = false
+        excludesfile = ~/.gitignore
 [push]
         default = simple
 [credential]
