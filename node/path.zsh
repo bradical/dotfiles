@@ -1,1 +1,2 @@
-export PATH="/usr/local/share/npm/bin:$PATH"
+export N_PREFIX=`brew --prefix`/lib/node_modules
+export PATH=$N_PREFIX/bin:$PATH
