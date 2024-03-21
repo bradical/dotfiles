@@ -46,8 +46,8 @@ function mrefresh {
        gunzip -c $dump | $(mysql_login) --default-character-set=utf8 $database
        ;;
     *\.zip )
-       echo "Importing zip file: $dump"
-       unzip -p $dump | $(mysql_login)--default-character-set=utf8 $database
+       echo "Importing zip file: $dump, login: $(mysql_login)"
+       unzip -p $dump | $(mysql_login) --default-character-set=utf8 $database
        ;;
     *\.sql )
        echo "Importing sql dump: $dump"
