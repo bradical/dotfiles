@@ -58,7 +58,7 @@
         pretty = log --pretty='%Cred%h%Creset %C(bold blue)<%an>%Creset %C(yellow)%d%Creset %s (%cr)' --date=relative
 
 [core]
-        autocrlf = false
+	autocrlf = input
         excludesfile = ~/.gitignore
 [push]
         default = simple
@@ -69,3 +69,5 @@
 	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
+[init]
+	defaultBranch = main
