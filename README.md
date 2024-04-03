@@ -1,5 +1,7 @@
 # bradical does dotfiles
 
+This is my fork of [zholman/dotfiles](https://github.com/zholman/dotfiles/)
+
 Your dotfiles are how you personalize your system. These are mine.
 
 I was a little tired of having long alias files and everything strewn about
@@ -63,13 +65,17 @@ There's a few special files in the hierarchy.
 Run this:
 
 ```sh
-git clone https://github.com/holman/dotfiles.git ~/.dotfiles
-cd ~/.dotfiles
+git clone https://github.com/bradical/dotfiles.git ~/Dev/dotfiles
+cd ~/Dev/dotfiles
+# Create a .giconfig.local and update it
+cp ~/Dev/dotfiles/git/gitconfig.local.symlink.example ~/Dev/dotfiles/git/gitconfig.local.symlink
+# Create a .localrc and update it
+cp ~/Dev/dotfiles/zsh/localrc.symlink.example ~/Dev/dotfiles/zsh/localrc.symlink
 script/bootstrap
 ```
 
 This will symlink the appropriate files in `.dotfiles` to your home directory.
-Everything is configured and tweaked within `~/.dotfiles`.
+Everything is configured and tweaked within `~/Dev/dotfiles`.
 
 The main file you'll want to change right off the bat is `zsh/zshrc.symlink`,
 which sets up a few paths that'll be different on your particular machine.
@@ -92,7 +98,7 @@ and I'd love to get it fixed for you!
 
 ## thanks
 
-I forked [Zach Holmans dotfiles](http://github.com/holman/dotfiles)  and he forked 
+I forked [Zach Holmans dotfiles](http://github.com/holman/dotfiles) and he forked 
 [Ryan Bates](http://github.com/ryanb)' excellent [dotfiles](http://github.com/ryanb/dotfiles) 
 for a couple years before the weight of his changes and tweaks inspired Zach to finally roll his own. But Ryan's
 dotfiles were an easy way to get into bash customization, and then to jump ship
