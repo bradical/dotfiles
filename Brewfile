@@ -2,34 +2,17 @@ cask_args appdir: '/Applications'
 
 tap 'homebrew/bundle'
 
-brew 'cloudflared'
-brew 'imagemagick'
-brew 'postgresql@14'
-brew 'redis'
-brew 'ruby-build'
-brew 'spaceman-diff'
-brew 'spark'
-brew 'stripe/stripe-cli/stripe'
-brew 'wget'
-brew 'yt-dlp'
+# Still experimenting
 
-cask '1password'
-cask 'airtable'
-cask 'arq'
-cask 'diffusionbee'
-cask 'handbrake'
-cask 'messenger'
-cask 'notion-calendar'
-cask 'plex'
-cask 'sonos'
-cask 'transmission'
-cask 'raycast'
-cask 'warp'
-cask 'whatsapp'
-cask 'visual-studio-code'
-cask 'vlc'
-cask 'zed'
-cask 'zoom'
+#holman's
+#brew 'ruby-build'
+#brew 'spaceman-diff'
+#cask '1password'
+#cask 'sonos'
+#cask 'warp'
+#cask 'whatsapp'
+#cask 'visual-studio-code'
+
 ## Heroku CLI
 # tap heroku/brew
 # brew heroku
