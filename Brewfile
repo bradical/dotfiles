@@ -1,3 +1,18 @@
+cask_args appdir: '/Applications'
+
+tap 'homebrew/bundle'
+
+# Still experimenting
+
+#holman's
+#brew 'ruby-build'
+#brew 'spaceman-diff'
+#cask '1password'
+#cask 'sonos'
+#cask 'warp'
+#cask 'whatsapp'
+#cask 'visual-studio-code'
+
 ## Heroku CLI
 # tap heroku/brew
 # brew heroku
