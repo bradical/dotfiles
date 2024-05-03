@@ -16,11 +16,11 @@ function mpurge-older-than7 {
 }
 
 function msw {
-  sed -i '' "s|jdbc:mysql://localhost:3306/[^\?]*|jdbc:mysql://localhost:3306/${1}|g" $TOMCAT_CONF_FILE
+  sed -i '' -E "s|jdbc:mysql://localhost(:[0-9]*)?/[^\?]*|jdbc:mysql://localhost\1/${1}|g" $TOMCAT_CONF_FILE
 }
 
 function mcurrent {
- grep -o -E 'jdbc:mysql://localhost:3306/.*?\?' $TOMCAT_CONF_FILE
+ grep -o -E 'jdbc:mysql://localhost(:?\d*?)/.*?\?' $TOMCAT_CONF_FILE
 }
 
 function mrefresh {
