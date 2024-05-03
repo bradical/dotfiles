@@ -1,0 +1,1 @@
+. $ZSH/system/z/z.sh

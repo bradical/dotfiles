@@ -1,0 +1,2 @@
+alias j7='export JAVA_HOME=$J7_HOME; export PATH=$JAVA_HOME/bin:$PATH; echo "JAVA_HOME: $JAVA_HOME"; echo "PATH: $PATH"'
+alias j8='export JAVA_HOME=$J8_HOME; export PATH=$JAVA_HOME/bin:$PATH; echo "JAVA_HOME: $JAVA_HOME"; echo "PATH: $PATH"'

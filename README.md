@@ -1,4 +1,6 @@
-# holman does dotfiles
+# bradical does dotfiles
+
+This is my fork of [zholman/dotfiles](https://github.com/zholman/dotfiles/)
 
 Your dotfiles are how you personalize your system. These are mine.
 
@@ -27,6 +29,19 @@ above and see what components may mesh up with you.
 [Fork it](https://github.com/holman/dotfiles/fork), remove what you don't
 use, and build on what you do use.
 
+## properties files and other files not under version control
+
+The [mysql scripts](https://github.com/bradical/dotfiles/blob/master/mysql/mysql.zsh) require a file called `mysql.properties` to exist in the `mysql` sub-directory and contain the following properties. It is ignored so as to avoid committing passwords to source control.
+
+```
+USER=root
+PASSWORD=<PASSWORD>
+DEFAULT_DMP=<Path to a dump file to default to when refreshing or creating new databases>
+DEFAULT_TEST_DMP=<Path to a dump file to default to when refreshing a test db>
+DEFAULT_DB=<Name of the db to use if no db is specified>
+DEFAULT_TEST_DB=<Name of the db to use for mrefreshtest if no name is specified>
+```
+
 ## components
 
 There's a few special files in the hierarchy.
@@ -50,13 +65,17 @@ There's a few special files in the hierarchy.
 Run this:
 
 ```sh
-git clone https://github.com/holman/dotfiles.git ~/.dotfiles
-cd ~/.dotfiles
+git clone https://github.com/bradical/dotfiles.git ~/Dev/dotfiles
+cd ~/Dev/dotfiles
+# Create a .giconfig.local and update it
+cp ~/Dev/dotfiles/git/gitconfig.local.symlink.example ~/Dev/dotfiles/git/gitconfig.local.symlink
+# Create a .localrc and update it
+cp ~/Dev/dotfiles/zsh/localrc.symlink.example ~/Dev/dotfiles/zsh/localrc.symlink
 script/bootstrap
 ```
 
 This will symlink the appropriate files in `.dotfiles` to your home directory.
-Everything is configured and tweaked within `~/.dotfiles`.
+Everything is configured and tweaked within `~/Dev/dotfiles`.
 
 The main file you'll want to change right off the bat is `zsh/zshrc.symlink`,
 which sets up a few paths that'll be different on your particular machine.
@@ -79,9 +98,9 @@ and I'd love to get it fixed for you!
 
 ## thanks
 
-I forked [Ryan Bates](http://github.com/ryanb)' excellent
-[dotfiles](http://github.com/ryanb/dotfiles) for a couple years before the
-weight of my changes and tweaks inspired me to finally roll my own. But Ryan's
+I forked [Zach Holmans dotfiles](http://github.com/holman/dotfiles) and he forked 
+[Ryan Bates](http://github.com/ryanb)' excellent [dotfiles](http://github.com/ryanb/dotfiles) 
+for a couple years before the weight of his changes and tweaks inspired Zach to finally roll his own. But Ryan's
 dotfiles were an easy way to get into bash customization, and then to jump ship
 to zsh a bit later. A decent amount of the code in these dotfiles stem or are
 inspired from Ryan's original project.

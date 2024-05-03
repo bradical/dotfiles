@@ -1,0 +1,1 @@
+[[ -v MYSQL_HOMEBREW_VERSION ]] && MYSQL_HOME=`brew --prefix ${MYSQL_HOMEBREW_VERSION}` && export PATH=$MYSQL_HOME/bin:$PATH

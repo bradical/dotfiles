@@ -1,0 +1,20 @@
+MYSQL_USER=root
+MYSQL_PASSWORD=
+MYSQL_LOGIN="-u$MYSQL_USER"
+MYSQL_HOMEBREW_VERSION=mysql@8.0
+DEFAULT_DMP=/path/to/default-mysql-db
+DEFAULT_TEST_DMP=/path/to/default-mysql-testdb
+TOMCAT_CONF_FILE=conf/context.xml
+
+J11_HOME=/Path/to/Java/Contents/Home
+J17_HOME=/Path/to/Java//Contents/Home
+JAVA_OPTS=-Xmx768m
+JAVA_HOME=$J11_HOME
+export JAVA_HOME
+
+ANT_OPTS=-Xmx2048m
+ANT_HOME=/usr/local/opt/ant
+
+MAVEN_OPTS="-Xmx768m -noverify"
+
+PROJECT=~/Dev
