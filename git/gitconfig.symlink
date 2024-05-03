@@ -73,6 +73,3 @@
 	defaultBranch = main
 [diff "spaceman-diff"]
   command = /opt/homebrew/bin/spaceman-diff
-
-[init]
-	defaultBranch = main
