@@ -13,6 +13,8 @@ cask 'visual-studio-code'
 
 ## Other Dev tools
 
+brew 'git-lfs'
+
 # Heroku CLI
 tap 'heroku/brew'
 brew 'heroku'
@@ -26,7 +28,7 @@ cask 'session-manager-plugin'
 
 # MySQL
 brew 'mysql@8.0'
-# brew mysql@5.7
+brew 'mysql@5.7'
 
 # Node
 brew 'fnm'
