@@ -5,11 +5,11 @@ tap 'homebrew/bundle'
 # holman's
 #brew 'ruby-build'
 # brew 'spaceman-diff'
-cask '1password'
-cask 'sonos'
-cask 'warp'
-cask 'whatsapp'
-cask 'visual-studio-code'
+# cask '1password' -- something weird with recognizing current version
+# cask 'sonos' -- something weird with recognizing current version
+# cask 'warp' --  -- something weird with recognizing current version
+# cask 'whatsapp'
+# cask 'visual-studio-code'  -- something weird with recognizing current version
 
 ## Other Dev tools
 
