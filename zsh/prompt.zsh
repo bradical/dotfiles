@@ -1,4 +1,5 @@
 autoload colors && colors
+
 # cheers, @ehrenmurdick
 # http://github.com/ehrenmurdick/config/blob/master/zsh/prompt.zsh
 
@@ -65,11 +66,20 @@ battery_status() {
   fi
 }
 
-export PROMPT=$'$(directory_name)$(git_dirty)$(need_push)$ '
-set_prompt () {
+set_prompt() {
   export RPROMPT="%{$fg_bold[cyan]%}%{$reset_color%}"
 }
 
-precmd() {
+set_title() {
   title "zsh" "%m" "%55<...<%~"
 }
+
+setup_prompt() {
+  setopt PROMPT_SUBST
+  export PROMPT=$'$(directory_name)$(git_dirty)$(need_push)$ '
+  set_prompt
+}
+
+precmd_functions+=(set_title)
+precmd_functions+=(setup_prompt)
+
