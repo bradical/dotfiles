@@ -37,29 +37,29 @@ function mrefresh {
   fi
 
   echo "Dropping database, creating, collating '$database'"
-  echo "drop database if exists \`$database\`; create database \`$database\`; ALTER DATABASE  \`$database\` DEFAULT CHARACTER SET utf8 COLLATE
-   utf8_unicode_ci;" | $(mysql_login) 
+  echo "drop database if exists \`$database\`; create database \`$database\`; ALTER DATABASE  \`$database\` DEFAULT CHARACTER SET utf8mb3 COLLATE
+   utf8mb3_unicode_ci;" | $(mysql_login) 
 
   case $dump in
     *\.gz )
        echo "Importing sql.gz dump: $dump"
-       gunzip -c $dump | $(mysql_login) --default-character-set=utf8 $database
+       gunzip -c $dump | $(mysql_login) --default-character-set=utf8mb3 $database
        ;;
     *\.zip )
        echo "Importing zip file: $dump, login: $(mysql_login)"
-       unzip -p $dump | $(mysql_login) --default-character-set=utf8 $database
+       unzip -p $dump | $(mysql_login) --default-character-set=utf8mb3 $database
        ;;
     *\.sql )
        echo "Importing sql dump: $dump"
-       $(mysql_login) --default-character-set=utf8 $database < $dump
+       $(mysql_login) --default-character-set=utf8mb3 $database < $dump
        ;;
     *\.schema )
        echo "Importing schema file: $dump"
-       $(mysql_login) --default-character-set=utf8 $database < $dump
+       $(mysql_login) --default-character-set=utf8mb3 $database < $dump
        ;;
     *)
        echo "Importing data from existing mysql db: $dump"
-       mysqldump $(mlogin) -e --add-drop-table --default-character-set=utf8 $dump | $(mysql_login) --default-character-set=utf8 $database
+       mysqldump $(mlogin) -e --add-drop-table --default-character-set=utf8mb3 $dump | $(mysql_login) --default-character-set=utf8mb3 $database
        ;;
   esac
 }
