@@ -1,2 +1,2 @@
-PATH="$JAVA_HOME/bin:$ANT_HOME/bin:$PATH"
+PATH="$JAVA_HOME/bin:$PATH"
 export PATH
