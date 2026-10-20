@@ -12,3 +12,6 @@
 
 [commit]
   gpgsign = true
+
+[includeIf "gitdir:~/WORK_DIR/"]
+  path = ~/.gitconfig.work.local

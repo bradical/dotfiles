@@ -1,3 +1,4 @@
+git/gitconfig.work.local.symlink
 git/gitconfig.local.symlink
 Brewfile.lock.json
 git/allowed_signers.local.symlink
