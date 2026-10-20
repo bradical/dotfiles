@@ -4,13 +4,17 @@ export ZSH=$HOME/Dev/dotfiles
 # your project folder that we can `c [tab]` to
 export PROJECTS=~/Dev
 
+# Use a 1Password generated environment
+source ~/.env
+
 # Stash your environment variables in ~/.localrc. This means they'll stay out
 # of your main dotfiles repository (which may be public, like this one), but
 # you'll have access to them in your scripts.
-if [[ -a ~/.localrc ]]
-then
-  source ~/.localrc
-fi
+#if [[ -a ~/.localrc ]]
+#then
+#  source ~/.localrc
+#fi
+#
 
 # all of our zsh files
 typeset -U config_files
@@ -49,4 +53,4 @@ zle -N down-line-or-beginning-search
 bindkey "^[[A" up-line-or-beginning-search # Up
 bindkey "^[[B" down-line-or-beginning-search # Down
 
-
+export DISPLAY=:0
