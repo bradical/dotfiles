@@ -34,7 +34,7 @@ brew 'mysql@5.7'
 brew 'fnm'
 
 # PostgreSQL
-brew 'postgresql@13'
+brew 'postgresql@17'
 
 ## Various utilities
 brew 'coreutils' # for various system commands in terminal
