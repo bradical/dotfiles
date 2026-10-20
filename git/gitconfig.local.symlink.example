@@ -13,5 +13,6 @@
 [commit]
   gpgsign = true
 
+# When testing this, remember that you have to be in a Git repo and not just a subdir of ~/WORK_DIR
 [includeIf "gitdir:~/WORK_DIR/"]
   path = ~/.gitconfig.work.local
