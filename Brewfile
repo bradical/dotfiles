@@ -27,8 +27,7 @@ brew 'awscli'
 cask 'session-manager-plugin'
 
 # MySQL
-brew 'mysql@8.0'
-brew 'mysql@5.7'
+brew 'mysql@8.4'
 
 # Node
 brew 'fnm'
